@@ -20,6 +20,10 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 # Adding Devise
 gem 'devise'
+# Adding omniauth
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # Adding Rubocop
 gem 'rubocop'
 # Use jquery as the JavaScript library

@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  #Routes for oauth with facebook
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

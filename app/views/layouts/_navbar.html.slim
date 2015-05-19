@@ -21,7 +21,7 @@ nav.navbar.navbar-default
              = link_to t(:sign_out), destroy_user_session_path, :method=>'delete'
           li
             a[href="/users/edit"]
-              =t :settings
+              = current_user.email      
         - else  
           li
             a[href="/users/sign_up"]
