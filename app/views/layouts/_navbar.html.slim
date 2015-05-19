@@ -14,18 +14,18 @@ nav.navbar.navbar-default
       ul.nav.navbar-nav
         li
           a[href="/articles"]
-            b Articles       
+            b = t :articles       
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li
-            = link_to "Sign Out", destroy_user_session_path, :method=>'delete'
+             = link_to t(:sign_out), destroy_user_session_path, :method=>'delete'
           li
             a[href="/users/edit"]
-              | Settings
+              =t :settings
         - else  
           li
             a[href="/users/sign_up"]
-              | Sign Up
+              =t :sign_up
           li
             a[href="/users/login"]
-              | Sign In
+              =t :sign_in

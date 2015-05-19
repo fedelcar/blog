@@ -19,11 +19,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  my_blog: "My Blog"
-  articles: "Articles"
-  sign_out: "Sign Out"
-  sign_up: "Sign Out"
-  sign_in: "Sign In"
-  settings: "Settings"
+es:
+  hello: "Hola mundo"
+  my_blog: "Mi Blog"
+  articles: "Artículos"
+  sign_out: "Cerrar sesión"
+  sign_up: "Crear una cuenta"
+  sign_in: "Entrar"
+  settings: "Opciones"
+
