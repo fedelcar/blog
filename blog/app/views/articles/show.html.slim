@@ -1,0 +1,17 @@
+div.col-md-10
+  p
+    h1 = @article.title
+  p
+    = @article.text
+  h2 Comments
+
+  = render @article.comments 
+
+  h3 Add a comment:
+  = render 'comments/form'
+
+
+  br
+  = link_to 'Edit', edit_article_path(@article)
+  '  || 
+  = link_to 'Back', articles_path
