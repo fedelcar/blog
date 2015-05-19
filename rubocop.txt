@@ -1,0 +1,19 @@
+Inspecting 43 files
+.................C....................W.W.W
+
+Offenses:
+
+test/test_helper.rb:5:7: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+bin/spring:10:12: W: Lint/AssignmentInCondition: Assignment in condition - you probably meant to use ==.
+  if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m)
+           ^
+bin/rails:4:1: W: Lint/HandleExceptions: Do not suppress exceptions.
+rescue LoadError
+^^^^^^^^^^^^^^^^
+bin/rake:4:1: W: Lint/HandleExceptions: Do not suppress exceptions.
+rescue LoadError
+^^^^^^^^^^^^^^^^
+
+43 files inspected, 4 offenses detected
