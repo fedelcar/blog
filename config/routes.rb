@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, path: "users", path_names: { sign_in: 'login', sign_out: 'logout'}
-
+  devise_for :users, path: "users", path_names: { sign_in: 'login', sign_out: 'logout'}, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :articles do
     resources :comments
   end
 
   #Routes for oauth with facebook
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
 
   root 'welcome#index'
 

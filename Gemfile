@@ -18,11 +18,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # Adding bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-# Adding Devise
+# Use Devise for user management
 gem 'devise'
 # Adding omniauth
+gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 
 # Adding Rubocop
 gem 'rubocop'
