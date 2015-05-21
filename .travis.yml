@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+  - 2.0.0
+
+addons:
+  code_climate:
+    repo_token:
+
+env:
+  global:
+    - RUBY_GC_MALLOC_LIMIT=90000000
+    - RUBY_GC_HEAP_FREE_SLOTS=200000
+    - SECURITY_SECRET_TOKEN=traviscitraviscitraviscitraviscitravisci
+
+services:
+  - postgresql
+
+script:
+  - bundle exec rspec
+  - bundle exec rubocop app spec features -R --format simple
+
