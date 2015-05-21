@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-
+  post "articles/send_last_10", to: "articles#send_last_10"
   #Routes for oauth with facebook
 
 
