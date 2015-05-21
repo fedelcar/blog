@@ -24,7 +24,7 @@ gem 'devise'
 gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
 
 # Using ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
@@ -60,7 +60,7 @@ group :development, :test do
 
   # Rspec for tests
   gem 'rspec-rails', '~> 3.0'
-  
+
   # Spring speeds up development by keeping your application
   # running in the background.
   # Read more: https://github.com/rails/spring

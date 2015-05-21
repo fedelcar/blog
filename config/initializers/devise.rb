@@ -41,12 +41,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :email ]
+  config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [ :email ]
+  config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -233,11 +233,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, "1577047772560567", "006be5bf28617b30e2a83adcc91f94e0"
-  config.omniauth :google_oauth2, "821415195211-4h8r9vas0t3crl2s3trd3miibckljr70.apps.googleusercontent.com", "yzifRhJHLmYqmhCtfLKtPQnX", { access_type: "offline", approval_prompt: "" }
-
-
-  
+  config.omniauth :facebook, '1577047772560567', '006be5bf28617b30e2a83adcc91f94e0'
+  config.omniauth :google_oauth2, '821415195211-4h8r9vas0t3crl2s3trd3miibckljr70.apps.googleusercontent.com', 'yzifRhJHLmYqmhCtfLKtPQnX', access_type: 'offline', approval_prompt: ''
+  config.secret_key = '416bd3392ca43d241da192049d54059ebf8478234ee589a1ee02a398dcb024c13ac6b0e2937451d9c6c10ea1b9f003938975369641a34040ebb5fd9e627515d2'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

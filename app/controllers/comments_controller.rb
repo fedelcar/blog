@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def article
-   @article ||=Article.find(params[:article_id])
+    @article ||= Article.find(params[:article_id])
   end
 
   private

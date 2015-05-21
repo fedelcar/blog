@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-   article
+    article
 
     if @article.update(article_params)
       redirect_to @article
@@ -40,13 +40,13 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    article    @article.destroy
+    article @article.destroy
 
     redirect_to articles_path
   end
 
   def article
-   @article ||=Article.find(params[:id])
+    @article ||= Article.find(params[:id])
   end
 
   private

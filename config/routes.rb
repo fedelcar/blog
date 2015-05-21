@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, path: "users", path_names: { sign_in: 'login', sign_out: 'logout'}, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, path: 'users', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { omniauth_callbacks: 'callbacks' }
   resources :articles do
     resources :comments
   end
-  post "articles/send_last_10", to: "articles#send_last_10"
-  #Routes for oauth with facebook
-
+  post 'articles/send_last_10', to: 'articles#send_last_10'
+  # Routes for oauth with facebook
 
   root 'welcome#index'
 
