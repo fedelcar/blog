@@ -26,6 +26,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 
+# Using ActiveAdmin
+gem 'activeadmin', github: 'activeadmin'
+
 # Adding Rubocop
 gem 'rubocop'
 # Use jquery as the JavaScript library
