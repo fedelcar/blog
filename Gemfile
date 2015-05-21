@@ -33,6 +33,10 @@ gem 'sidekiq'
 
 # Adding Rubocop
 gem 'rubocop'
+
+# Using Pundit
+gem "pundit"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster.

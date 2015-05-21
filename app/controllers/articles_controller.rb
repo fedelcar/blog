@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+
     @article.user = current_user
     if @article.save
       redirect_to @article
@@ -39,16 +40,18 @@ class ArticlesController < ApplicationController
 
   def update
     article
-    if @article.user == current_user
-      @article.update(article_params)
-      redirect_to articles_path
+    authorize @article
+    if @article.update(article_params)
+      redirect_to @article
     else
       redirect_to edit_article_path(@article.id)
     end
   end
 
   def destroy
-    article.destroy if article.user == current_user
+    article
+    authorize @article
+    @article.destroy
     redirect_to articles_path
   end
 

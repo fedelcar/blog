@@ -169,6 +169,8 @@ GEM
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     powerpack (0.1.1)
+    pundit (1.0.0)
+      activesupport (>= 3.0.0)
     rack (1.6.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -310,6 +312,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   pg
+  pundit
   rails (= 4.2.1)
   rspec-rails (~> 3.0)
   rubocop
