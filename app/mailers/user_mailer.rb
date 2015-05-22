@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   def last_10_email(user, articles)
     @user = user
     @articles = articles
-    mail(to: @user.email, subject: "Welcome to Puppify!")
+    mail(to: @user, subject: "Welcome to Puppify!")
   end
 end
  

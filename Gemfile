@@ -28,6 +28,9 @@ gem 'omniauth-google-oauth2'
 
 # Using ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
+# Use sidekiq for multithreading
+gem 'sidekiq'
+gem 'redis-rails'
 
 # Adding Rubocop
 gem 'rubocop'
