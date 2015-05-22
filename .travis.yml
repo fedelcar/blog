@@ -16,7 +16,6 @@ services:
   - postgresql
 
 before_script:
-  - cp config/database.travis.yml config/database.yml
   - psql -c "CREATE USER federicolopezcanas WITH PASSWORD 'password';" -U postgres
   - psql -c "DROP DATABASE IF EXISTS blog_test;" -U postgres
   - psql -c "CREATE DATABASE blog_test ENCODING 'utf8';" -U postgres
