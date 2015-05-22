@@ -42,15 +42,15 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = 'true'
   config.action_mailer.raise_delivery_errors =  'true'
   config.action_mailer.default charset: 'utf-8'
-  
+
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 25,
-    :enable_starttls_auto => true,
-    :user_name => Rails.application.secrets.mandrill_user_name,
-    :password  => Rails.application.secrets.mandrill_password,
-    :authentication => 'login',
-    :domain => 'wolox.com.ar'
+    address: 'smtp.mandrillapp.com',
+    port: 25,
+    enable_starttls_auto: true,
+    user_name: Rails.application.secrets.mandrill_user_name,
+    password: Rails.application.secrets.mandrill_password,
+    authentication: 'login',
+    domain: 'wolox.com.ar'
   }
 
   # Raises error for missing translations
