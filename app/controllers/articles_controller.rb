@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def send_last_10
+    @articles = Article.last(10)
+    UserMailer.last_10_email(current_user,@articles).deliver
     redirect_to root_path
   end
 

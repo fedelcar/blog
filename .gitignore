@@ -87,4 +87,6 @@ build/
 
 # Rubocop
 rubocop.txt
-.rubocop.yml
+
+# To do file
+.TO DO

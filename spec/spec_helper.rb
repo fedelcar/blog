@@ -21,7 +21,7 @@ require 'devise'
 require 'rspec/rails'
 
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, type: :controller
   config.render_views
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

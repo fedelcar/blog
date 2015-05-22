@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   devise_for :users, path: 'users', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { omniauth_callbacks: 'callbacks' }
   resources :articles do
     resources :comments
+    collection do
+      post :send_last_10
+    end
   end
-  post 'articles/send_last_10', to: 'articles#send_last_10'
   # Routes for oauth with facebook
 
   root 'welcome#index'
