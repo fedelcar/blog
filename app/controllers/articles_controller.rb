@@ -13,14 +13,16 @@ class ArticlesController < ApplicationController
 
   def send_last_10
     @articles = Article.last(10)
-    UserMailer.last_10_email(current_user.email,@articles).deliver_now
+    UserMailer.last_10_email(current_user.email, @articles).deliver_now
     redirect_to root_path
   end
 
   def send_last_10_by_last_5
+    # def get_content_to_display
     HardWorker.perform_async(current_user.email)
-
-    redirect_to root_path
+    render :processing_email do |page|
+      page.replace_html 'display_ajax', partial: '_processed'
+    end
   end
 
   def edit
@@ -40,18 +42,14 @@ class ArticlesController < ApplicationController
   def update
     article
     if @article.update(article_params)
-      if article.user=current_user.email
-        redirect_to @article
-      end
+      redirect_to @article if article.user = current_user.email
     else
       render 'edit'
     end
   end
 
   def destroy
-    if article.user=current_user.email
-      article.destroy
-    end
+    article.destroy if article.user = current_user.email
     redirect_to articles_path
   end
 
