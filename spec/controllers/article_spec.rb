@@ -2,12 +2,17 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe ArticlesController do
-  describe 'GET #index' do
-    it 'responds successfully with an HTTP 200 status code' do
-      @user = User.create(email: 'imanexample@example.com', password: 'shhhpassword')
-      sign_in @user
-      get :index
-      expect(response).to have_http_status(200)
-    end
-  end
+    describe "GET index" do
+	    let(:user) { FactoryGirl.create(:user) }
+	    before(:all) { 30.times { FactoryGirl.create(:user) } }
+    	after(:all)  { User.delete_all }  
+	    
+	    context 'when logged in' do
+	      before do
+	        sign_in user
+	        get :index
+	      end
+	      it { is_expected.to render_template :index }
+		  end
+	end
 end
