@@ -12,8 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def send_last_10
-    @articles = Article.last(10)
-    UserMailer.last_10_email(current_user.email, @articles).deliver_now
+    SendLastWorker.perform_async(current_user.email,10)
+    # UserMailer.last_10_email(current_user.email, @articles).deliver_now
     redirect_to root_path
   end
 
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   def update
     article
     if @article.update(article_params)
-      redirect_to @article if article.user = current_user.email
+      redirect_to @article if article.user == current_user.email
     else
       render 'edit'
     end

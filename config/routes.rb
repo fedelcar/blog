@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     end
   end
   # Routes for oauth with facebook
-
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

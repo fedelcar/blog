@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def set_locale
-    I18n.locale = I18n.default_locale
+    I18n.locale = params[:locale]
   end
+  
+  def default_url_options(options = {})
+  	{ locale: I18n.locale  ? params[:locale] : "en"}.merge options
+	end
 end
