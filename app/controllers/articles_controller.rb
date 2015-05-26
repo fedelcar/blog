@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   def send_last_10_by_last_5
     HardWorker.perform_async(current_user.email)
     respond_to do |format|
-      format.html { render :html => "Email Sent" }
+      format.html { render html: 'Email Sent' }
     end
   end
 
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = current_user.email
+    @article.user_id = current_user.id
     if @article.save
       redirect_to @article
     else
@@ -39,15 +39,16 @@ class ArticlesController < ApplicationController
 
   def update
     article
-    if @article.update(article_params)
-      redirect_to @article if article.user == current_user.email
+    if @article.user == current_user
+      @article.update(article_params)
+      redirect_to articles_path
     else
-      render 'edit'
+      redirect_to edit_article_path(@article.id)
     end
   end
 
   def destroy
-    article.destroy if article.user = current_user.email
+    article.destroy if article.user == current_user
     redirect_to articles_path
   end
 
