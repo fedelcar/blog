@@ -13,6 +13,3 @@ class HardWorker
     UserMailer.last_10_email(user_email, @articles).deliver
   end
 end
-
-
-select (select * from Articles where users.id == article.user) from users order by id desc limit 10

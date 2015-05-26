@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def send_last_10
-    SendLastWorker.perform_async(current_user.email,10)
+    SendLastWorker.perform_async(current_user.email, 10)
     # UserMailer.last_10_email(current_user.email, @articles).deliver_now
     redirect_to root_path
   end
