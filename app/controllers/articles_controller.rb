@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   def send_last_10_by_last_5
     HardWorker.perform_async(current_user.email)
     respond_to do |format|
-      format.html { render :html => "Email Sent" }
+      format.html { render html: 'Email Sent' }
     end
   end
 
