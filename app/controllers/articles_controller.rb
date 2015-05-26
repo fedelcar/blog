@@ -40,10 +40,10 @@ class ArticlesController < ApplicationController
   def update
     article
     if @article.user == current_user
-      @article.update(article_params) 
+      @article.update(article_params)
       redirect_to articles_path
     else
-      redirect_to edit_article_path(@article.id) 
+      redirect_to edit_article_path(@article.id)
     end
   end
 
