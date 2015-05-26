@@ -1,3 +1,11 @@
 h1 =t :hello
-h3 = link_to t(:my_blog), articles_path	
-= button_to "Ajax eMail", send_last_10_by_last_5_articles_path
+h3 = link_to t(:my_blog), articles_path
+= button_tag "Ajax eMail"
+javascript:
+	$("button").click(function(){
+	    $("#div1").load("/articles/send_last_10_by_last_5", function(responseTxt, statusTxt, xhr){
+	        if(statusTxt == "error")
+	            alert("Error: " + xhr.status + ": " + xhr.statusText);
+	    });
+	});
+#div1

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :comments
     collection do
       post :send_last_10
-      post :send_last_10_by_last_5
+      get :send_last_10_by_last_5
     end
   end
   # Routes for oauth with facebook

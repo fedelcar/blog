@@ -13,15 +13,13 @@ class ArticlesController < ApplicationController
 
   def send_last_10
     SendLastWorker.perform_async(current_user.email, 10)
-    # UserMailer.last_10_email(current_user.email, @articles).deliver_now
     redirect_to root_path
   end
 
   def send_last_10_by_last_5
-    # def get_content_to_display
     HardWorker.perform_async(current_user.email)
-    render :processing_email do |page|
-      page.replace_html 'display_ajax', partial: '_processed'
+    respond_to do |format|
+      format.html { render :html => "Email Sent" }
     end
   end
 
