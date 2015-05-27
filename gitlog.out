@@ -1,0 +1,240 @@
+commit efc5ccf317c9f596fed0a79377c52aa4c6b1859a
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 14:07:05 2015 -0300
+
+    Added pundit. Users can only edit and delete articles they created themselves
+
+commit 0a1a81f48a8f2038210b62f2295cdb0326af8d97
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Wed May 27 11:53:26 2015 -0300
+
+    Fixed PR comments
+
+commit ea7f2dfaad4fed923aafbe00a3e7bb2ce1073da6
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 26 14:58:53 2015 -0300
+
+    Rubocop fixes
+
+commit 593aa24eb3478137d8e8b310c646348e274c04bd
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 26 14:56:57 2015 -0300
+
+    Email sent using ajaw and jquery
+
+commit 00b3eb7c94d7323988fafd84b0394328c8c9a4b4
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 26 13:55:18 2015 -0300
+
+    Fixed rubocop offenses
+
+commit 89192b31c586e5cb77b020fab779fec9466663c6
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 26 13:44:38 2015 -0300
+
+    Added and fixed specs. Added FactoryGirl
+
+commit 632f7278438e834f37eb84a32890261b66f72fc2
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 26 11:35:11 2015 -0300
+
+    Fixed comments from pull requests. Language change via URL params. Worker changes
+
+commit f63b1d89558a01ba4ed997fc15c855c341cf5dbd
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 26 10:18:11 2015 -0300
+
+    Added secrets.yml
+
+commit 5c8f97a8e44730a2f3e18396ddc1d070f03743e2
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 19:46:26 2015 -0300
+
+    Removed duplicate code
+
+commit d79ae3d14738899acbcf67bcafcc049d9c14100f
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 19:33:49 2015 -0300
+
+    Added secret to yml
+
+commit 2614539c72e88c95664f26e59fe9cca6fbb03196
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 19:29:22 2015 -0300
+
+    Added secret to yml
+
+commit 785c013fd1e95c512b97a6ccf6017cd62c13febc
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 19:18:35 2015 -0300
+
+    Fixed travis.yml
+
+commit 1f3199b5deff6a98bd0ebd87dae2071cc80ae4d6
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 19:13:14 2015 -0300
+
+    Fixed travis.yml
+
+commit 78cceb118dea159029f15873fe644071c43a371e
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 19:03:06 2015 -0300
+
+    Fixed rubocop offenses
+
+commit a71ff98ed6234381816199bbd353df0e9cd342db
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 17:34:18 2015 -0300
+
+    Change subject for mails
+
+commit edf6a33c673607729627d16c5bf45bc9e95b6c05
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 17:03:48 2015 -0300
+
+    Configure sidekiq and worker that sends email
+
+commit 57f3f3a8a7c81bb9b264211f077efaa4377443e3
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 12:17:31 2015 -0300
+
+    Added mailer with mandrill
+
+commit 7c126e815b1e6c150bd6a01487bdf6a089cfce56
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Fri May 22 12:02:52 2015 -0300
+
+    Added basic specs
+
+commit c07a70b12adb1ab364c6d44904ac1a9aaa23ee38
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 16:40:07 2015 -0300
+
+    Fixed some rubocop offenses
+
+commit 4c1e43341d5413f85fa83df4483864a91c6889ba
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 16:19:12 2015 -0300
+
+    Fixed error in specs
+
+commit de024ab6b4ad8f1f365377d2621eb9773e0b2b51
+Merge: c8eee6a 1875861
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 16:11:22 2015 -0300
+
+    Merge branch 'rspec' into travis-ci
+
+commit c8eee6af31bdd7eb20c1f6da188ba765a778b6c6
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 16:05:11 2015 -0300
+
+    Added travis.yml
+
+commit 48aa5d0a5b1592b3ce8b8a5ee98a79e57bf2e376
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 15:16:09 2015 -0300
+
+    Added badges to README.md
+
+commit 8f675ac9056bf2a723ad4db7da089897a454adb8
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 15:14:10 2015 -0300
+
+    Added badges to README
+
+commit e7b8577e04369344b0e7f3681d8e4fcc1afa76af
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 15:04:58 2015 -0300
+
+    Fixed some styling issues, cleaner controllers. Deleted commented code sections
+
+commit 8698d379adb33cf86054457a5a54620e233cdf40
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 12:22:15 2015 -0300
+
+    Added Active Admin
+
+commit ffae1c358245bbd0b789df10ecbd46b3940606f6
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 10:31:53 2015 -0300
+
+    Added button and route
+
+commit 1875861a496abcff48d9095c12dcb8921d388894
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Thu May 21 10:22:29 2015 -0300
+
+    Some tests finished, stil not authenticated
+
+commit 829602880447b13f5eaf265a316b444dda70a4f3
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Wed May 20 17:50:55 2015 -0300
+
+    Added rspec, test cases for models
+
+commit 0043ad7bee37407a5e4e190c7403c0778d37a5f0
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Wed May 20 12:31:49 2015 -0300
+
+    Added facebook and google login with omniauth for devise
+
+commit 81507171487ca04b457f488d43823b901007ea77
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Wed May 20 10:30:19 2015 -0300
+
+    Fixing stuff
+
+commit 94cace6b6774d621900b5223246d5f10810d2949
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 18:12:13 2015 -0300
+
+    Oauth in progress
+
+commit 16f602d3df75672e7bdd022fb917f6bba290c26c
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 17:00:04 2015 -0300
+
+    Added I18n support
+
+commit 35d402a4c859c410241090673d26f8ebdf69663f
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 16:26:08 2015 -0300
+
+    Deleting old folder
+
+commit ca71a8aa715ba56207c61bdf057dc067be8b3f4e
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 16:25:19 2015 -0300
+
+    Reordering and deleting unnecsary files. Changing .gitignore.
+
+commit 260cae8fdd9087b9c7fdb7188aa0fa3c6cffb1fa
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 16:21:22 2015 -0300
+
+    Reoridering files and folders
+
+commit d60373cc631a0409a73e01e0b77218292e574cb7
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 15:45:27 2015 -0300
+
+    Added login with device
+
+commit db250c6d8c341060e380f60ad2866bbde445cd2e
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 12:56:51 2015 -0300
+
+    Finished blog
+
+commit 0f4fbbca250fb76578d9a12a3c75699a6b79cd2c
+Author: Federico López Cañás <federico.lopez@wolox.com.ar>
+Date:   Tue May 19 10:08:30 2015 -0300
+
+    Initial commit
+
+commit cf5676182c0ac1806c1c0f74c99f228d6117cd43
+Author: Federico López Cañás <fedelc.us@gmail.com>
+Date:   Mon May 18 16:22:44 2015 -0300
+
+    Initial commit

@@ -11,11 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20150526181211) do
-=======
-ActiveRecord::Schema.define(version: 20150521155236) do
->>>>>>> d06feb1... Added pundit. Users can only edit and delete articles they created themselves
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +57,7 @@ ActiveRecord::Schema.define(version: 20150521155236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "user"
-<<<<<<< HEAD
     t.string   "user_id"
-=======
->>>>>>> d06feb1... Added pundit. Users can only edit and delete articles they created themselves
   end
 
   create_table "comments", force: :cascade do |t|
