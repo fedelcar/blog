@@ -25,7 +25,7 @@ RSpec.describe Article do
         article.comments << comment
       end
       it 'destroys the comments that belong to the article' do
-        expect { article.destroy }.to change { Comment.count }.by(-1)
+        expect { article.destroy }.to change { Comment.count }.by(-1)   
       end
     end
   end
