@@ -63,6 +63,7 @@ group :development, :test do
   # Rspec for tests
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl'
+  gem 'faker'
 
   # Spring speeds up development by keeping your application
   # running in the background.

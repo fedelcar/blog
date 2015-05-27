@@ -3,10 +3,8 @@ require 'spec_helper'
 
 RSpec.describe ArticlesController do
   describe 'GET index' do
-    let(:user) { FactoryGirl.create(:user) }
-    before(:all) { 30.times { FactoryGirl.create(:user) } }
-    after(:all)  { User.delete_all }
     context 'when logged in' do
+      let(:user) { FactoryGirl.create(:user) }
       before do
         sign_in user
         get :index

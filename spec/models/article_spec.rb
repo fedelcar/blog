@@ -3,17 +3,13 @@ require 'rails_helper'
 RSpec.describe Article do
   describe 'create' do
     context 'when article is valid' do
-      let(:article) { FactoryGirl.create(:article) }
-      it 'returns an Article instance' do
-        expect(article).to be_an_instance_of Article
-      end
+      let(:article) { FactoryGirl.create(:article)
+                      expect(article).to be_an_instance_of Article }
     end
     context 'when article is invalid' do
-      let(:article) { FactoryGirl.build(:article, title: 'ABC') }
-      it 'raises an error' do
-        expect(article).not_to be_valid
+      let(:article) { FactoryGirl.build(:article, title: 'ABC') 
+                      expect(article).not_to be_valid}
       end
-    end
   end
 
   describe 'destroy' do

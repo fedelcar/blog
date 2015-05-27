@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :article do
-    title 'primer blog'
-    text 'es el primer blog'
+    title Faker::Company.name
+    text Faker::Company.catch_phrase
   end
 end
