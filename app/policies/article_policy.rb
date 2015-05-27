@@ -7,10 +7,10 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def destroy?
-    @user.email == @article.user
+    @user == @article.user
   end
 
   def update?
-    @user.email == @article.user
+    @user == @article.user
   end
 end

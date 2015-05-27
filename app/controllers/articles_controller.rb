@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 
   def update
     article
-    authorize @article
+    authorize article
     if @article.update(article_params)
       redirect_to @article
     else
@@ -49,9 +49,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    article
-    authorize @article
-    @article.destroy
+    authorize article
+    article.destroy
     redirect_to articles_path
   end
 
