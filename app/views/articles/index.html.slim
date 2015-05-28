@@ -1,3 +1,5 @@
+= javascript_include_tag 'application.js' 
+
 div.col-md-10
 	h1 Articles
 	= link_to 'New article', new_article_path 
@@ -12,11 +14,14 @@ div.col-md-10
 			th colspan="3"
 		- @articles.each do |a|
 			tr
+				td
+					= form_for :article, url: "/api/v1/articles/"+a.id.to_s+"/edit", method: "post" do |f|
+						= f.text_field :text
+						= f.button "Edit", :id => 'botonSend'
 				td = a.title
 				td = a.text
 				td = link_to 'Show', article_path(a)
 				- if policy(a).update?
-					td = link_to 'Edit', edit_article_path(a)
+					td = link_to 'Edit'
 				- if policy(a).destroy?
 					td = link_to 'Destroy', article_path(a), method: :delete, data: { confirm: 'Are you sure?' }
-

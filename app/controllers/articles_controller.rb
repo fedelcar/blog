@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+    skip_before_action :verify_authenticity_token
   def index
     @articles = Article.all
   end
@@ -53,6 +54,16 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def api_update
+    article
+    # @article.title = params[:title]
+    @article.text = params[:article][:text]
+    @article.save
+    respond_to do |format|
+      format.html { render html: 'Article Updated' }
+    end
+  end
+
   def article
     @article ||= Article.find(params[:id])
   end
@@ -60,6 +71,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :user)
+    params.permit(:article,:title,:text, :user)
   end
 end

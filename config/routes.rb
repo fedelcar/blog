@@ -10,6 +10,17 @@ Rails.application.routes.draw do
       get :send_last_10_by_last_5
     end
   end
+
+   scope '/api' do
+    scope '/v1' do
+      scope '/articles' do
+        scope '/:id' do
+            post '/edit' => 'articles#api_update'
+          end
+        end
+      end
+    end
+
   # Routes for oauth with facebook
   root 'welcome#index'
 
