@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-    skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
   def index
     @articles = Article.all
   end
@@ -71,6 +71,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.permit(:article,:title,:text, :user)
+    params.permit(:article, :title, :text, :user)
   end
 end
