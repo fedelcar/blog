@@ -35,7 +35,7 @@ gem 'sidekiq'
 gem 'rubocop'
 
 # Using Pundit
-gem "pundit"
+gem 'pundit'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -56,11 +56,12 @@ class ArticlesController < ApplicationController
 
   def api_update
     article
-    # @article.title = params[:title]
-    @article.text = params[:article][:text]
-    @article.save
-    respond_to do |format|
-      format.html { render html: 'Article Updated' }
+    @article.title = params[:post_title]
+    @article.text = params[:text]
+    if @article.save
+      render json: {}, status: 200
+    else
+      render json: {}, status: 400
     end
   end
 
@@ -71,6 +72,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.permit(:article, :title, :text, :user)
+    params.permit(:article, :title, :text, :user, :post_title)
   end
 end

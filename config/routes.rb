@@ -11,15 +11,15 @@ Rails.application.routes.draw do
     end
   end
 
-   scope '/api' do
+  scope '/api' do
     scope '/v1' do
       scope '/articles' do
         scope '/:id' do
-            post '/edit' => 'articles#api_update'
-          end
+          post '/edit' => 'articles#api_update'
         end
       end
     end
+  end
 
   # Routes for oauth with facebook
   root 'welcome#index'
