@@ -14,13 +14,20 @@ div.col-md-10
 			th colspan="3"
 		- @articles.each do |a|
 			tr
-				= form_for a, url: "/api/v1/articles/"+a.id.to_s+"/edit", remote:true, method: "post", article_id: a.id.to_s do |f|
+				= form_for a, url: "/api/v1/articles/"+a.id.to_s+"/edit", remote:true, method: "post", f_class:'form', f_id: "id_"+a.id.to_s do |f|
 					td
-						= f.label :title, a.title, id:'lblTitle'
-						= f.text_field :post_title, id:'txtTitle', style:'display:none', value: a.title
+						= f.label :title, a.title, class:'lbl-title', id: "id_"+a.id.to_s
+						= f.text_field :post_title, class:'txt-title', style:'display:none', value: a.title, id: "id_"+a.id.to_s
 					td
-						= f.label :text, a.text, id:'lblText'
-						= f.text_field :text, id:'txtText', style:'display:none', value: a.text
+						= f.label :text, a.text, class:'lbl-text', id: "id_"+a.id.to_s
+						= f.text_field :text, class:'txt-text', style:'display:none', value: a.text, id: "id_"+a.id.to_s
 					td
-						= f.button "Edit", id:"editButton"
-			 			= button_tag "Send", id: 'sendEdit',  style:"display:none"
+						- if policy(a).update?
+							= f.button "Edit", class:'edit-button', id: "id_"+a.id.to_s
+			 				= button_tag "Send", class:'send-edit',  style:"display:none", article_id: "id_"+a.id.to_s.to_s, id: "id_"+a.id.to_s
+			 		td
+			 			= link_to "Show", article_path(a.id), id: "id_"+a.id.to_s
+			 		td
+			 			- if policy(a).destroy?
+			 				= link_to 'Destroy', article_path(a), method: :delete, data: { confirm: 'Are you sure?' }
+

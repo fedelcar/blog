@@ -23,34 +23,38 @@ $("#boton").click(function(){
     });
 });
 
-$("#editButton").click(function(){
-  $( "#txtTitle" ).show();
-  $( "#txtText" ).show();
-  $( "#sendEdit" ).show();
-  $( "#editButton" ).hide();
-  $( "#destroyButton" ).hide();
-  $( "#lblTitle" ).hide();
-  $( '#lblText' ).hide();
+$(".edit-button").click(function(){
+  id = this.id;
+  $( "#"+id+".txt-title" ).show();
+  $( "#"+id+".txt-text" ).show();
+  $( "#"+id+".send-edit" ).show();
+  $( "#"+id+".edit-button" ).hide();
+  $( "#"+id+".destroy-button" ).hide();
+  $( "#"+id+".lbl-title" ).hide();
+  $( "#"+id+'.lbl-text' ).hide();
 });
 
-$("#sendEdit").click(function(){
-  $( "#txtTitle" ).hide();
-  $( "#txtText" ).hide();
-  $( "#sendEdit" ).hide();
-  $( "#editButton" ).show();
-  $( "#destroyButton" ).show();
-  $( "#lblTitle" ).show();
-  $( '#lblText' ).show();
+$(".send-edit").click(function(){
+  id = this.id;
+  $( "#"+id+".txt-title" ).hide();
+  $( "#"+id+".txt-text" ).hide();
+  $( "#"+id+".send-edit" ).hide();
+  $( "#"+id+".edit-button" ).show();
+  $( "#"+id+".destroy-button" ).show();
+  $( "#"+id+".lbl-title" ).show();
+  $( "#"+id+'.lbl-text' ).show();
+  // debugger;
+  id = id.split("_")[1],
   $.ajax({
-	  url: $('form')[1].action,
-	  method: "POST",
-	  data: {"post_title": $("#txtTitle").val(), "text": $("#txtText").val()},
+    url: "api/v1/articles/"+id+"/edit",
+    method: "POST",
+	  data: {"post_title": $("#id_"+id+".txt-title").val(), "text": $("#id_"+id+".txt-text").val()},
 	  success: (function(a, b, c){
-      $( '#lblTitle' ).text($("#txtTitle").val());
-      $( '#lblText' ).text($("#txtText").val());
-	  	console.log("OKKKK")
+      $( "#id_"+id+".lbl-title" ).html($("#id_"+id+".txt-title").val());
+      $( "#id_"+id+".lbl-text" ).html($("#id_"+id+".txt-text").val());
+ 	  	console.log("OK")
     }),
 	  error: (function(a, b, c){
-	  	console.log("Nope")
+	  	console.log("Error: "+b)
 	  })});
 });
