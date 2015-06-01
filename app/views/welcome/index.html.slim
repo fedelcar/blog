@@ -1,3 +1,5 @@
-div.col-md-10	
-	h1 Hello Rails!
-	= link_to 'My Blog', controller: 'articles'	
+= javascript_include_tag 'application.js' 
+h1 =t :hello
+h3 = link_to t(:my_blog), articles_path
+= button_tag "Ajax eMail", :id => 'boton'
+#div1

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    b
+      |Hi, 
+      = @user
+    br
+    h3 Here are the last articles from WBlog:
+    br 
+    ul
+      - @articles.each do |a|
+        li 
+          b = a.title 
+          |(
+          = a.user 
+          |)

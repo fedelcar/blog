@@ -18,10 +18,25 @@ gem 'coffee-rails', '~> 4.1.0'
 # Adding bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-# Adding Devise
+# Use Devise for user management
 gem 'devise'
+# Adding omniauth
+gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+# Using ActiveAdmin
+gem 'activeadmin', github: 'activeadmin'
+# Use sidekiq for multithreading
+gem 'sidekiq'
+
 # Adding Rubocop
 gem 'rubocop'
+
+# Using Pundit
+gem "pundit"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster.
@@ -48,6 +63,11 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  # Rspec for tests
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl'
+  gem 'faker'
 
   # Spring speeds up development by keeping your application
   # running in the background.

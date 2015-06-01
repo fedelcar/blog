@@ -13,9 +13,6 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -37,7 +34,24 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Configure mailer options
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'mail.host', only_path: false }
+  # config.action_mailer.asset_host = mail.host
+  config.action_mailer.default_url_options = { host: 'localhost:3000', only_path: false }
+  config.action_mailer.asset_host = 'localhost:3000'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = 'true'
+  config.action_mailer.raise_delivery_errors =  'true'
+  config.action_mailer.default charset: 'utf-8'
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: 25,
+    enable_starttls_auto: true,
+    user_name: Rails.application.secrets.mandrill_user_name,
+    password: Rails.application.secrets.mandrill_password,
+    authentication: 'login',
+    domain: 'wolox.com.ar'
+  }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
