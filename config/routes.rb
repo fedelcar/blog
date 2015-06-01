@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  api_version(:module => "V1", :path => {:value => "v1"}) do
+    resources :articles
+    scope '/articles' do
+      scope '/:id' do
+        post '/edit' => 'articles#api_update'
+      end
+    end
+  end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, path: 'users', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { omniauth_callbacks: 'callbacks' }
@@ -11,15 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-  scope '/api' do
-    scope '/v1' do
-      scope '/articles' do
-        scope '/:id' do
-          post '/edit' => 'articles#api_update'
-        end
-      end
-    end
-  end
 
   # Routes for oauth with facebook
   root 'welcome#index'

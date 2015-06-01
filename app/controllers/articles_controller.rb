@@ -29,7 +29,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = Article.new
+    @article.title = params[:article][:title]
+    @article.text = params[:article][:text]
     @article.user = current_user
     if @article.save
       redirect_to @article
@@ -52,17 +54,6 @@ class ArticlesController < ApplicationController
     authorize article
     article.destroy
     redirect_to articles_path
-  end
-
-  def api_update
-    article
-    @article.title = params[:post_title]
-    @article.text = params[:text]
-    if @article.save
-      render json: {}, status: 200
-    else
-      render json: {}, status: 400
-    end
   end
 
   def article

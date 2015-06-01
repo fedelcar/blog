@@ -46,7 +46,7 @@ $(".send-edit").click(function(){
   // debugger;
   id = id.split("_")[1],
   $.ajax({
-    url: "api/v1/articles/"+id+"/edit",
+    url: "/v1/articles/"+id+"/edit",
     method: "POST",
 	  data: {"post_title": $("#id_"+id+".txt-title").val(), "text": $("#id_"+id+".txt-text").val()},
 	  success: (function(a, b, c){
@@ -55,6 +55,7 @@ $(".send-edit").click(function(){
  	  	console.log("OK")
     }),
 	  error: (function(a, b, c){
-	  	console.log("Error: "+b)
+	  	console.log("Error: "+b);
+      console.log(this.url)
 	  })});
 });

@@ -26,6 +26,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# Use versionist for api versions
+gem 'versionist'
+
 # Using ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
 # Use sidekiq for multithreading
