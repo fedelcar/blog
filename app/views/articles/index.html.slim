@@ -1,33 +1,11 @@
 = javascript_include_tag 'application.js'
 
-div.col-md-10
+.col-md-10
 	h1 Articles
 	= link_to 'New article', new_article_path
 	br
 	br
 	= button_to "Send eMail", send_last_10_articles_path
 
-	table
-		tr
-			th Title
-			th Text
-			th colspan="3"
-		- @articles.each do |a|
-			tr
-				= form_for a, remote:true, method: "post", f_class:'form', f_id: "id_"+a.id.to_s do |f|
-					td
-						= f.label :title, a.title, class:'lbl-title', id: "id_"+a.id.to_s
-						= f.text_field :post_title, class:'txt-title', style:'display:none', value: a.title, id: "id_"+a.id.to_s
-					td
-						= f.label :text, a.text, class:'lbl-text', id: "id_"+a.id.to_s
-						= f.text_field :text, class:'txt-text', style:'display:none', value: a.text, id: "id_"+a.id.to_s
-					td
-						- if policy(a).update?
-							= f.button "Edit", class:'edit-button', id: "id_"+a.id.to_s
-			 				= button_tag "Send", class:'send-edit',  style:"display:none", article_id: "id_"+a.id.to_s.to_s, id: "id_"+a.id.to_s
-			 		td
-			 			= link_to "Show", article_path(a.id), id: "id_"+a.id.to_s
-			 		td
-			 			- if policy(a).destroy?
-			 				= link_to 'Destroy', article_path(a), method: :delete, data: { confirm: 'Are you sure?' }
-
+	#articles
+		= render 'articles'

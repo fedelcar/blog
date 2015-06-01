@@ -313,6 +313,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

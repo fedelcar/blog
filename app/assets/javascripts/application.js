@@ -48,14 +48,28 @@ $(".send-edit").click(function(){
   $.ajax({
     url: "/v1/articles/"+id+"/edit",
     method: "POST",
-	  data: {"post_title": $("#id_"+id+".txt-title").val(), "text": $("#id_"+id+".txt-text").val()},
-	  success: (function(a, b, c){
+    data: {"post_title": $("#id_"+id+".txt-title").val(), "text": $("#id_"+id+".txt-text").val()},
+    success: (function(a, b, c){
       $( "#id_"+id+".lbl-title" ).html($("#id_"+id+".txt-title").val());
       $( "#id_"+id+".lbl-text" ).html($("#id_"+id+".txt-text").val());
- 	  	console.log("OK")
+      console.log("OK")
     }),
-	  error: (function(a, b, c){
-	  	console.log("Error: "+b);
+    error: (function(a, b, c){
+      console.log("Error: "+b);
       console.log(this.url)
-	  })});
+    })});
+});
+
+$(".pagination a").click(function(){
+  $.ajax({
+    dataType: 'html',
+    url: this.href,
+    success: (function(a, b, c){
+      console.log("OK")
+      $(".pagination").hide();
+      $("#articles").html(a);
+    }),
+    error: (function(a, b, c){
+      console.log("Error: "+c);
+    })});
 });

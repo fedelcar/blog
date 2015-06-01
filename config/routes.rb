@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   api_version(:module => "V1", :path => {:value => "v1"}) do
     resources :articles
     scope '/articles' do
+      get 'index' => 'articles#index'
       scope '/:id' do
-        post '/edit' => 'articles#api_update'
+        post '/edit' => 'articles#update'
       end
     end
   end

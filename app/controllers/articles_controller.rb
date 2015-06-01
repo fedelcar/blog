@@ -1,7 +1,11 @@
 class ArticlesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :verify_authenticity_token
   def index
-    @articles = Article.all
+    @articles = Article.all.page(params[:page]).per(3)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show

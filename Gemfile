@@ -29,6 +29,9 @@ gem 'omniauth-google-oauth2'
 # Use versionist for api versions
 gem 'versionist'
 
+# Use Kaminari for paging items in indexes
+gem 'kaminari'
+
 # Using ActiveAdmin
 gem 'activeadmin', github: 'activeadmin'
 # Use sidekiq for multithreading
